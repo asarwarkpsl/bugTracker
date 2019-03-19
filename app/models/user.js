@@ -8,10 +8,19 @@ var userSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,
     img: String,
-    boards: [
+    role: {
+        type: String,
+        enum: ['ADMIN', 'PROJ_MANAGER', 'DEVELOPER', 'QA']
+    },
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    created_at: { type: Date },
+    projects: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Board'
+            ref: 'Project'
         }
     ]
 });
