@@ -1,0 +1,35 @@
+{
+  "name": "bugTracker",
+  "version": "0.0.1",
+  "description": "Nodejs Server for bugTracker backend app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "Azeem Sarwar",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.205.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "connect-roles": "^3.1.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "helmet": "^3.11.0",
+    "http": "0.0.0",
+    "jsonwebtoken": "^8.1.1",
+    "mailgun-js": "^0.16.0",
+    "mongoose": "^5.0.5",
+    "mongoose-timestamp": "^0.6.0",
+    "morgan": "^1.9.0",
+    "onesignal-node": "^1.0.2",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "path": "^0.12.7",
+    "winston": "^3.0.0-rc1"
+  }
+}
