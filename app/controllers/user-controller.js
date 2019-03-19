@@ -1,7 +1,6 @@
 var User = require('../models/user');
 var jwt = require('jsonwebtoken');
 var config = require('../../config');
-var emailCtrl = require('./email-controller');
 var bcrypt = require('bcrypt-nodejs');
 
 function createToken(user) {
@@ -28,7 +27,7 @@ exports.addUser = function(req, res) {
         if (err) {
             return res.status(400).json(err);
         }
-        emailCtrl.sendWelcomeEmail(user);
+       // emailCtrl.sendWelcomeEmail(user);
         res.status(201).json(user);
     });
 };
@@ -99,7 +98,7 @@ exports.resetUserPw = function (req, res) {
                         return res.status(400).json(err);
                     }
 
-                    emailCtrl.sendResetPasswordEmail(user, randomPw);
+                  //  emailCtrl.sendResetPasswordEmail(user, randomPw);
 
                     return res.status(200).send({msg: "Check your Emails for a new password now!"});
                 });

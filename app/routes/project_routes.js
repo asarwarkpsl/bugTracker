@@ -38,3 +38,5 @@ router.delete('/:id',projectCtrl.deleteProject);
 
 //router.delete('/:id/:componentId', user.can('boards'),projectCtrl.deleteComponent);
 router.delete('/:id/:componentId',projectCtrl.deleteComponent);
+
+module.exports = router;

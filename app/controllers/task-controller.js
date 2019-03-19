@@ -1,7 +1,6 @@
 var Task = require('../models/task');
 var Board = require('../models/board');
 var User = require('../models/user');
-var emailCtrl = require('./email-controller');
 var pushCtrl = require('./push-controller');
 
 exports.addTask = function(req, res) {
@@ -24,7 +23,7 @@ exports.addTask = function(req, res) {
         if (task.creator != task.assignee) {
             User.findById(task.assignee, (err, user) => {
                 if (user) {
-                    emailCtrl.sendNewTaskEmail(user, task);
+                 //   emailCtrl.sendNewTaskEmail(user, task);
                     pushCtrl.pushToUser(user._id, 'You have a new task!', 'Task', 'task');
                 }
             });
@@ -54,7 +53,7 @@ exports.updateTask = function(req, res) {
         if (task.assignee != req.body.assignee) {
             User.findById(req.body.assignee, (err, user) => {
                 if (user) {
-                    emailCtrl.sendNewTaskEmail(user, task);
+                  //  emailCtrl.sendNewTaskEmail(user, task);
                 }
             });
         }
