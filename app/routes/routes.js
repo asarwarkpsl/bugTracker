@@ -10,9 +10,9 @@ var router = express.Router();
 // router.use('/aws', passport.authenticate('jwt', { session: false }), require('./aws_routes'));
 
 router.use('/users', require('./user_routes'));
-router.use('/projects',passport.authenticate('jwt',{session:false}),require('./'));
-router.use('/componants',passport.authenticate('jwt',{session:false}),require('./'));
-router.use('/bugs',passport.authenticate('jwt',{session:false}),require('./'));
+router.use('/projects',passport.authenticate('jwt',{session:false}),require('./project_routes'));
+router.use('/components',passport.authenticate('jwt',{session:false}),require('./component_routes'));
+router.use('/bugs',passport.authenticate('jwt',{session:false}),require('./bug_routes'));
 
 
 module.exports = router;
