@@ -12,3 +12,11 @@
 {"message":"listening in http://localhost:5000","level":"info"}
 {"message":"listening in http://localhost:5000","level":"info"}
 {"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error"}
+{"message":"listening in http://localhost:5000","level":"info"}
+{"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error"}
+{"message":"listening in http://localhost:5000","level":"info"}
+{"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error"}
+{"message":"listening in http://localhost:5000","level":"info"}
+{"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error"}
+{"message":"listening in http://localhost:5000","level":"info"}
+{"name":"MongoNetworkError","errorLabels":["TransientTransactionError"],"level":"error"}
