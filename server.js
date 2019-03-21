@@ -25,24 +25,24 @@ app.use(bodyParser.json());
 
 
 // Passport Setup
-var opts = {}
-opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = config.jwtSecret;
+// var opts = {}
+// opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+// opts.secretOrKey = config.jwtSecret;
 
-passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
-    User.findById(jwt_payload.id, function (err, user) {
-        if (err) {
-            return done(err, false);
-        }
-        if (user) {
-            return done(null, user);
-        } else {
-            return done(null, false);
-        }
-    });
-}));
+// passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
+//     User.findById(jwt_payload.id, function (err, user) {
+//         if (err) {
+//             return done(err, false);
+//         }
+//         if (user) {
+//             return done(null, user);
+//         } else {
+//             return done(null, false);
+//         }
+//     });
+// }));
 
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 const logger = winston.createLogger({
     level: 'info',

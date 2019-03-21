@@ -1,5 +1,5 @@
 module.exports = {
-    db: process.env.MONGODB_URI || 'mongodb://localhost/bugTracker',
+    db: process.env.MONGODB_URI || 'mongodb://localhost/startup',
     port: process.env.PORT || 5000,
     env: process.env.NODE_ENV || 'development',
     jwtSecret: process.env.JWT_SECRET || '123secret456!',
