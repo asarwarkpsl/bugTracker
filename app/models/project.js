@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var timestamp = require('mongoose-timestamp');
 
 var projectSchema = new mongoose.Schema({
-    name: string,
-    desc: string,
+    name: String,
+    desc: String,
     components: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Component'
