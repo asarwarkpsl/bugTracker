@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var timestamp = require('mongoose-timestamp');
 
-var componentSchema = new mongoose.Schema({
+var compSchema = new mongoose.Schema({
     name: String,
     desc: String,
     assigned_users: [{
@@ -10,19 +10,21 @@ var componentSchema = new mongoose.Schema({
     }],
     created_at: Date,
     created_by: {
-        type: mongoose.Schema.Types.objectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
     project: {
-        Type: mongoose.Schema.Types.objectId,
-        ref='Project'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Project'
     },
-    bugs: [{
-        type: mongoose.Schema.Types.objectId,
-        ref='Bug'
-    }]
+    bugs: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Bug'
+        }
+    ]
 });
 
-componentSchema.plugin(timestamp);
+compSchema.plugin(timestamp);
 
-module.exports = mongoose.model('Component', componentSchema);
+module.exports = mongoose.model('Component', compSchema);

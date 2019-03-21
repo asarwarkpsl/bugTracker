@@ -11,7 +11,7 @@ var bugSchema = new mongoose.Schema({
         ref: 'User'
     },
     assigned_component: [{
-        type: mongoose.Schema.Types.objectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Component'
     }],
     assigned_users: [{
@@ -36,7 +36,6 @@ var bugSchema = new mongoose.Schema({
             }]
         }
     ]
-
 });
 
 bugSchema.plugin(timestamp);
