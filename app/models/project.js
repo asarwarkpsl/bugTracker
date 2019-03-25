@@ -20,7 +20,8 @@ var projectSchema = new mongoose.Schema({
     modified_by: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    active_p:Boolean
 });
 
 projectSchema.plugin(timestamp);

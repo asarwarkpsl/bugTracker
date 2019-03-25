@@ -22,7 +22,8 @@ var compSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Bug'
         }
-    ]
+    ],
+    active_p:Boolean
 });
 
 compSchema.plugin(timestamp);
