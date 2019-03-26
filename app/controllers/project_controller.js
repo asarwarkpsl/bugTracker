@@ -19,7 +19,8 @@ exports.getProject = function (req, res) {
 
 exports.getProjects = function (req, res) {
     Project.find({})
-    .populate([{'path':'components','select':'name desc'}])
+    .populate([{'path':'components','select':'name desc bugs'}])
+    //.populate([{'path':'components.bugs','select':'name desc'}])
     .exec((err, projects) => {
         if (err) {
             return res.status(400).json(err);

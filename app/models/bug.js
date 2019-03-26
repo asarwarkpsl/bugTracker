@@ -10,7 +10,7 @@ var bugSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    assigned_component: [{
+    component: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Component'
     }],

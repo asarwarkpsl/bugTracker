@@ -8,13 +8,17 @@ exports.getComponents = function (req, res) {
         return res.status(400).json({ 'msg': 'You must set Project ID' });
     }
 
-    Project.findById(req.params.projId, (err, project) => {
-        if (err || !project) {
-            return res.status(400).json(err);
-        }
+    //  Project.findById(req.params.projId)
 
-        return res.status(200).json(project.components);
-    });
+    Component.find({ project: req.params.projId })
+        //.populate([{ 'path': 'bugs', 'select': 'name desc' }])
+        .exec((err, components) => {
+            if (err || !components) {
+                return res.status(400).json(err);
+            }
+
+            return res.status(200).json(components);
+        });
 };
 
 exports.getComponent = function (req, res) {
@@ -37,7 +41,7 @@ exports.getComponent = function (req, res) {
             }
         }
 
-         return res.status(400).json({ 'msg': 'Component ID doesnt exists' });
+        return res.status(400).json({ 'msg': 'Component ID doesnt exists' });
     });
 };
 
@@ -46,6 +50,10 @@ exports.addComponent = function (req, res) {
         return res.status(400).json({ 'msg': 'You must set Project ID' });
     }
 
+    if (!req.body.name || !req.body.desc) {
+        return res.status(400).json({ 'msg': 'You must set Name & Desc of bug' });
+    }
+    
     var newComponent = Component(req.body);
 
     Project.findByIdAndUpdate(req.params.projId, { $push: { "components": newComponent } }, (err, project) => {
@@ -75,7 +83,7 @@ exports.updateComponent = function (req, res) {
         return res.status(400).json({ 'msg': 'You cant change the project of a component(as its under progress)' });
     }
 
-    Component.findByIdAndUpdate(req.params.id, req.body, (err, component) => {
+    Component.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, component) => {
         if (err || !component) {
             return res.status(400).json(err);
         }
