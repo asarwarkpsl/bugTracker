@@ -18,9 +18,9 @@ exports.getProject = function (req, res) {
 };
 
 exports.getProjects = function (req, res) {
-    console.log("req.params");
-
-    Project.find({}, (err, projects) => {
+    Project.find({})
+    .populate([{'path':'components','select':'name desc'}])
+    .exec((err, projects) => {
         if (err) {
             return res.status(400).json(err);
         }
@@ -37,7 +37,7 @@ exports.addProject = function (req, res) {
     var newProject = Project(req.params);
     newProject.created_at = Date().Date;
     active_p = true;
-    //newProject.created_by = req.user.id;
+    newProject.created_by = req.user.id;
 
     newProject.save((err, project) => {
         if (err || !project) {
