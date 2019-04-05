@@ -2,31 +2,31 @@
 
     <ion-back-button defaultHref="/login">
     </ion-back-button>
-    <ion-row class="login-register-form" text-center>
+    <ion-row class="login-register-form" text-center [formGroup]="registerForm">
       <ion-col>
         <h3>Create Your Account</h3>
   
         <ion-item>
           <ion-label position="stacked">Email</ion-label>
-          <ion-input required type="email"></ion-input>
+          <ion-input required type="email" formControlName="email"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">First Name</ion-label>
-          <ion-input required type="email"></ion-input>
+          <ion-input required type="text" formControlName="first_name"></ion-input>
         </ion-item>
   
         <ion-item>
           <ion-label position="stacked">Last Name</ion-label>
-          <ion-input required type="email"></ion-input>
+          <ion-input required type="text" formControlName="last_name"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Password</ion-label>
-          <ion-input required type="password"></ion-input>
+          <ion-input required type="password" formControlName="password"></ion-input>
         </ion-item>
   
         <ion-row align-items-center>
           <ion-col size="2">
-            <ion-checkbox></ion-checkbox>
+            <ion-checkbox  formControlName="disclaimer"></ion-checkbox>
           </ion-col>
           <ion-col size="10">
             I Agree to <a target="_blank" href="https://ionicacademy.com/disclaimer/">Terms of Service</a> and <a target="_blank"
@@ -34,7 +34,9 @@
           </ion-col>
         </ion-row>
   
-        <ion-button expand="full" (click)="register()" padding-top padding-bottom>Create New Account</ion-button>
+        <ion-button expand="full" (click)="register()" padding-top padding-bottom
+        [disabled]="!registerForm.valid">
+        Create New Account</ion-button>
       </ion-col>
     </ion-row>
   </ion-content>
