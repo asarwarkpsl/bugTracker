@@ -49,7 +49,7 @@ exports.loginUser = function(req, res) {
         if (!user) {
             return res.status(400).json({msg: "The user was not found"});
         }
-
+       
         user.comparePassword(req.body.password, function(err, isMatch) {
             if (isMatch && !err) {
                 res.status(200).json({token: createToken(user)});

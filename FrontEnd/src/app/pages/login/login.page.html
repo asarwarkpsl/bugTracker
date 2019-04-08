@@ -3,20 +3,20 @@
   
   <ion-footer>
   
-    <ion-row class="login-register-form" text-center>
+    <ion-row class="login-register-form" text-center [formGroup]="loginForm">
       <ion-col>
         <h3>Login</h3>
   
         <ion-item>
           <ion-label position="stacked">Email</ion-label>
-          <ion-input required type="email"></ion-input>
+          <ion-input required type="email" formControlName="email"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Password</ion-label>
-          <ion-input required type="password"></ion-input>
+          <ion-input required type="password" formControlName="password"></ion-input>
         </ion-item>
   
-        <ion-button expand="full" (click)="login()">Login</ion-button>
+        <ion-button expand="full" (click)="login()" [disabled]="!loginForm.valid">Login</ion-button>
   
         <ion-row no-padding>
           <ion-col size="6" text-left>
