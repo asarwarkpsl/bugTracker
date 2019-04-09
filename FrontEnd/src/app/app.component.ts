@@ -29,7 +29,7 @@ export class AppComponent {
       this.authServices.authenticationState.subscribe(state=>{
         console.log('My State Changed',state);
         if(state){
-          this.router.navigateByUrl('/home/app/bugs');
+          this.router.navigateByUrl('/home/app/projects');
         }
         else{
           this.router.navigateByUrl('/login');
