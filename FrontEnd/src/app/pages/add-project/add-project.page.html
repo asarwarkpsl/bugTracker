@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create a new Project</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="save()" color="primary">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="discard()" color="primary">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row text-center [formGroup]="projectForm">
+    <ion-col>
+
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input required formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-textarea required rows="5" formControlName="desc"></ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -14,6 +14,8 @@ const routes: Routes = [
     children: [
       { path: 'app/bugs', loadChildren: '../bugs/bugs.module#BugsPageModule' },
       { path: 'app/projects', loadChildren: '../projects/projects.module#ProjectsPageModule' },
+     // { path: 'app/add-project', loadChildren: '../add-project/add-project.module#AddProjectPageModule' },
+     
     ]
   }
 ];

@@ -12,6 +12,8 @@ const routes: Routes = [
   },
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
   { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+  { path: 'add-project', loadChildren: './pages/add-project/add-project.module#AddProjectPageModule' },
+
 ];
 
 @NgModule({

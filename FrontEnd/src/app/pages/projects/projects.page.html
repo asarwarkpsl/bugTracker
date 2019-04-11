@@ -3,7 +3,22 @@
     <ion-title>projects</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <ion-list tappable (click)="openProject()" *ngFor="let project of (projects|async)?.projects">
+    <ion-item>
+      <!-- <ion-thumbnail slot="start">
+        <ion-img alt="pic"></ion-img>
+      </ion-thumbnail> -->
+      <ion-label>{{project.name}}</ion-label>
+      <small>{{project.desc}}</small>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button slot="end" (click)="ddNewProject()">
+      <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
