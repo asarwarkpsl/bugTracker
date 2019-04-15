@@ -28,7 +28,7 @@ proj:any[];
      this.projects= this.projectService.getProjects();
     
     this.projects.subscribe(res => {
-      console.log('DB Projects:',this.projects);
+      console.log('DB Projects:' , this.projects = res);
     }, err => { });
   }
 
