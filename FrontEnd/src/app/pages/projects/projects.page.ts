@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProjectsPage implements OnInit {
   projects:Observable<any>;
+proj:any[];
 
   constructor(private projectService: ProjectsService,private router:Router) { }
 
@@ -22,10 +23,12 @@ export class ProjectsPage implements OnInit {
   }
 
   loadProjects() {
-    this.projects= this.projectService.loadProjects();
+    console.log('before subscription:',this.projects);
+
+     this.projects= this.projectService.getProjects();
     
     this.projects.subscribe(res => {
-      console.log('Projects:',res);
+      console.log('DB Projects:',this.projects);
     }, err => { });
   }
 

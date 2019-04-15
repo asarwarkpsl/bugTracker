@@ -4,7 +4,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-list tappable (click)="openProject()" *ngFor="let project of (projects|async)?.projects">
+    {{projects}}
+  <ion-list tappable (click)="openProject()" *ngFor="let project of proj">
+    {{project.name}}
     <ion-item>
       <!-- <ion-thumbnail slot="start">
         <ion-img alt="pic"></ion-img>

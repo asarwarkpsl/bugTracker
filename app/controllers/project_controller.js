@@ -19,7 +19,7 @@ exports.getProject = function (req, res) {
 
 exports.getProjects = function (req, res) {
     Project.find({})
-    .populate([{'path':'components','select':'name desc bugs'}])
+   // .populate([{'path':'components','select':'name desc bugs'}])
     //.populate([{'path':'components.bugs','select':'name desc'}])
     .exec((err, projects) => {
         if (err) {
@@ -35,7 +35,7 @@ exports.addProject = function (req, res) {
         return res.status(400).json({ 'msg': 'You must set Project name & description!' });
     }
 
-    var newProject = Project(req.params);
+    var newProject = Project(req.body);
     newProject.created_at = Date().Date;
     active_p = true;
     newProject.created_by = req.user.id;

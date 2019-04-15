@@ -10,7 +10,7 @@ export class ProjectsService {
 
   constructor(private http:HttpClient) { }
 
-  loadProjects(){
+  getProjects(){
     return this.http.get(`${this.url}/projects`);
   }
 
