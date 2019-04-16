@@ -68,7 +68,7 @@ exports.addComponent = function (req, res) {
                 return res.status(400).json(err);
             }
 
-            return res.status(200).json(component);
+            return res.status(200).json({'component':component});
 
         });
 

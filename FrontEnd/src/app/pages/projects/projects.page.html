@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content>
     
-  <ion-list tappable (click)="openProject()" *ngFor="let project of projects.Projects">
+  <ion-list tappable (click)="openProject(project)" *ngFor="let project of projects.Projects">
     <ion-item>
       <!-- <ion-thumbnail slot="start">
         <ion-img alt="pic"></ion-img>

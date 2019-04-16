@@ -8,13 +8,17 @@ import { environment } from '../../environments/environment';
 export class ProjectsService {
   url = environment.url;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getProjects(){
+  getProjects() {
     return this.http.get(`${this.url}/projects`);
   }
 
-  createProject(newProject){
-    return this.http.post(`${this.url}/projects`,newProject);
+  createProject(newProject) {
+    return this.http.post(`${this.url}/projects`, newProject);
+  }
+
+  addComponent(projID, component) {
+    return this.http.post(`${this.url}/components/` + projID, component);
   }
 }

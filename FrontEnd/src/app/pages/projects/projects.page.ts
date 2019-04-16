@@ -9,27 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./projects.page.scss'],
 })
 export class ProjectsPage implements OnInit {
-  projects:Observable<any>;
-proj:any[];
+  projects: Observable<any>;
 
-  constructor(private projectService: ProjectsService,private router:Router) { }
+  constructor(private projectService: ProjectsService, private router: Router) { }
 
   ngOnInit() {
     this.loadProjects();
   }
 
-  ddNewProject(){
+  ddNewProject() {
     this.router.navigateByUrl('add-project');
   }
 
   loadProjects() {
-    console.log('before subscription:',this.projects);
 
-     this.projects= this.projectService.getProjects();
-    
+    this.projects = this.projectService.getProjects();
     this.projects.subscribe(res => {
-      console.log('DB Projects:' , this.projects = res);
+      this.projects = res;
     }, err => { });
   }
 
+  openProject(project) {
+
+  }
 }

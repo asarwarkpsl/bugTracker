@@ -1,8 +1,5 @@
 var Project = require('../models/project');
 var Component = require('../models/component');
-var User = require('../models/user');
-
-
 
 exports.getProject = function (req, res) {
     if (!req.params.id) {
@@ -19,26 +16,15 @@ exports.getProject = function (req, res) {
 };
 
 exports.getProjects = function (req, res) {
-    //     Project.find({})
-    //    // .populate([{'path':'components','select':'name desc bugs'}])
-    //     //.populate([{'path':'components.bugs','select':'name desc'}])
-    //     .exec((err, projects) => {
-    //         if (err) {
-    //             return res.status(400).json(err);
-    //         }
-
-    //         return res.status(200).json("projects:"+ projects);
-    //     });
-
-    User.findById(req.user.id)
-    .populate([{'path':'projects','select':'name desc'}])
-    .exec((err, user) => {
+    
+    Project.find({})
+    .exec((err, projects) => {
         if (err) {
             return res.status(400).json(err);
         }
 
-        return res.status(200).json({Projects: user.projects});
-    })
+        return res.status(200).json({Projects: projects});
+    });
 };
 
 exports.addProject = function (req, res) {
