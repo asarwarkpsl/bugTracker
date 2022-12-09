@@ -1,0 +1,43 @@
+{
+ "properties": {
+  "displayName": "Get Secure",
+  "policyType": "Custom",
+  "description": "This initiative has been created to handle all policy definitions associated with key vault",
+  "metadata": {
+   "category": "keyvault category",
+   "version": "1",
+   "createdBy": "6ce8c995-d15b-49c7-8afb-dd9586cef083",
+   "createdOn": "2022-12-09T05:29:53.3552939Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {},
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "Key vaults should have purge protection enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
+    "parameters": {},
+    "groupNames": [
+     "key valut"
+    ]
+   },
+   {
+    "policyDefinitionReferenceId": "Key vaults should have soft delete enabled_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+    "parameters": {},
+    "groupNames": [
+     "key valut"
+    ]
+   }
+  ],
+  "policyDefinitionGroups": [
+   {
+    "name": "key valut",
+    "displayName": "key valut"
+   }
+  ]
+ },
+ "id": "/subscriptions/b54f3d4b-4cf4-4a66-a37a-9d646a41723c/providers/Microsoft.Authorization/policySetDefinitions/e5fe430e71a34e3fb64bdf6c",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "e5fe430e71a34e3fb64bdf6c"
+}
